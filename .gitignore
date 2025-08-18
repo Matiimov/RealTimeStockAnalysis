@@ -23,3 +23,7 @@ logs/
 
 # Misc
 *.log
+
+# Metabase state (do not commit)
+docker/metabase-data/
+docker/metabase-plugins/
