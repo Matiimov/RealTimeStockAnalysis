@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: AwsDataCatalog
+    schema: rtsa_bronze
+    tables:
+      - name: ticks_raw_parquet
+        description: "Parquet from Kafka Connect"
