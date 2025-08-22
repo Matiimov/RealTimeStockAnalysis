@@ -7,3 +7,7 @@ sources:
     tables:
       - name: ticks_raw_parquet
         description: "Parquet from Kafka Connect"
+      - name: ticks_enriched_v2_all
+        description: "Enriched v2 (unpartitioned sanity table)"
+      - name: ticks_enriched_v2_part
+        description: "Enriched v2 partitioned by symbol_v"

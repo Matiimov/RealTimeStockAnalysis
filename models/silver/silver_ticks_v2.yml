@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: silver_ticks_v2
+    columns:
+      - name: symbol_v
+        tests: [not_null]
+      - name: ts
+        tests: [not_null]
+      - name: price
+        tests: [not_null]

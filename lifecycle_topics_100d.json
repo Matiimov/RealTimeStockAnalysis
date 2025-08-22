@@ -1,0 +1,10 @@
+{
+  "Rules": [
+    {
+      "ID": "expire-topics-after-100-days",
+      "Status": "Enabled",
+      "Filter": { "Prefix": "topics/" },
+      "Expiration": { "Days": 100 }
+    }
+  ]
+}

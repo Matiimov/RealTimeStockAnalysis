@@ -81,6 +81,7 @@ services:
       CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       CONNECT_REST_ADVERTISED_HOST_NAME: connect
       CONNECT_PLUGIN_PATH: /usr/share/java,/usr/share/confluent-hub-components
+      # Make connector logs quieter
       CONNECT_LOG4J_LOGGERS: org.reflections=ERROR
     volumes:
       - connect-data:/var/lib/kafka-connect
@@ -98,18 +99,18 @@ services:
       SERVER_SERVLET_CONTEXTPATH: "/"
 
   metabase:
-    image: metabase/metabase:latest
-    container_name: metabase
-    ports:
-      - "3000:3000"
-    environment:
-      MB_DB_FILE: /metabase.db/metabase.db
-      JAVA_TOOL_OPTIONS: -Xms256m -Xmx768m
-      AWS_PROFILE: rtsa
-    volumes:
-      - metabase-data:/metabase.db
-      - ~/.aws:/home/metabase/.aws:ro
-    restart: unless-stopped
+  image: metabase/metabase:latest
+  container_name: metabase
+  ports:
+    - "3000:3000"
+  environment:
+    MB_DB_FILE: /metabase.db/metabase.db
+    JAVA_TOOL_OPTIONS: -Xms256m -Xmx768m
+    AWS_PROFILE: rtsa
+  volumes:
+    - metabase-data:/metabase.db
+    - ~/.aws:/home/metabase/.aws:ro
+  restart: unless-stopped
 
 volumes:
   connect-data:
