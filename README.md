@@ -16,8 +16,8 @@ This repo showcases a compact, cloud‑native analytics pipeline that ingests st
 
 ```
 ┌─────────┐   ticks    ┌────────┐   enriched    ┌──────────┐   Parquet/Proj.   ┌────────┐   SQL models   ┌──────────┐
-│ Producer├──────────▶ │ Kafka  │─────────────▶│  ksqlDB  │──────────────────▶│  S3    │───────────────▶│  Athena  │
-└─────────┘            └────────┘              └──────────┘                    └────────┘               └──────────┘
+│ Producer├──────────▶ │ Kafka  │─────────────▶ │  ksqlDB  │──────────────────▶│  S3    │───────────────▶│  Athena  │
+└─────────┘            └────────┘               └──────────┘                   └────────┘                └──────────┘
                                                                                                               │
                                                                                                               ▼
                                                                                                             BI (Metabase)
