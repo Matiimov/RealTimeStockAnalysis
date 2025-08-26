@@ -11,3 +11,12 @@ test-paths: ["tests"]
 
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
+
+seeds:
+  realtime_stocks:
+    +schema: rtsa_ref # Athena schema for reference/lookup tables
+    +quote_columns: false
+    +column_types:
+      SYMBOL_V: varchar
+      GROUP_ID: varchar
+      GROUP_NAME: varchar
